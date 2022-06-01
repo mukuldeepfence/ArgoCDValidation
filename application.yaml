@@ -1,18 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-argo-application
+  name: deepfence
   namespace: argocd
 spec:
   project: default
 
   source:
-    repoURL: https://gitlab.com/nanuchi/argocd-app-config.git
+    repoURL: https://deepfence-helm-charts.s3.amazonaws.com/threatmapper
     targetRevision: HEAD
-    path: dev
+    path: deepfence
+
+    chart: deepfence
+    helm:
+      parameters:
+      - name: "registry.username"
+        value: "mukulietllucknow"
+      - name: "registry.password"
+        value: "c813e95d-3bdb-4f92-99da-27641cbe3ee2"
+        forceString: true 
+
   destination: 
     server: https://kubernetes.default.svc
-    namespace: myapp
+    namespace: deepfence
 
   syncPolicy:
     syncOptions:
