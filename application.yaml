@@ -16,7 +16,7 @@ spec:
       - name: "registry.username"
         value: "mukulietllucknow"
       - name: "registry.password"
-        value: "c813e95d-3bdb-4f92-99da-27641cbe3ee2"
+        value: "625ded92-6892-4f3a-bf51-b0e9fc12f23a"
         forceString: true 
 
   destination: 
