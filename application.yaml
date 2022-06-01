@@ -7,11 +7,10 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/mukuldeepfence/ArgoCDValidation.git
-    targetRevision: HEAD
-    path: helm-charts/deepfence-console
+    repoURL: https://deepfence-helm-charts.s3.amazonaws.com/threatmapper
+    targetRevision: 1.3.0
 
-    chart: deepfence
+    chart: deepfence-console
     helm:
       parameters:
       - name: "registry.username"
